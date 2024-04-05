@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { MDBSpinner } from "mdb-react-ui-kit";
+import React, { useState, useEffect } from 'react';
 import Card from "../components/Card";
 import NavBar from "../components/NavBar";
+import { MDBSpinner } from 'mdb-react-ui-kit';
 
 const HostelGirls = () => {
-  const [hostels, setHostels] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+ const [hostels, setHostels] = useState([]);
+ const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    Promise.all([
-      fetch("http://127.0.0.1:8000/data/girls-hostels/"),
-      fetch("http://127.0.0.1:8000/service/girls-hostels/"),
-    ])
-      .then(([response1, response2]) =>
-        Promise.all([response1.json(), response2.json()])
-      )
-      .then(([data1, data2]) => {
-        const combinedData = [...data1, ...data2];
-        setHostels(combinedData);
+ useEffect(() => {
+    fetch('http://127.0.0.1:8000/data/girls-hostels/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(text => {
+        const cleanedText = text.replace(/NaN/g, 'null');
+        return JSON.parse(cleanedText);
+      })
+      .then(data => {
+        setHostels(data);
         setIsLoading(false);
       })
-      .catch((error) => console.error("Fetch error:", error));
-  }, []);
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+        setIsLoading(false);
+      });
+ }, []);
 
-  return (
+ return (
     <>
-      <NavBar />
+      {/* <NavBarServices /> */}
+      <NavBar/>
       {isLoading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-          }}
-        >
-          <MDBSpinner role="status">
-            <span className="visually-hidden">Loading...</span>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+          <MDBSpinner role='status'>
+            <span className='visually-hidden'>Loading...</span>
           </MDBSpinner>
         </div>
       ) : (
@@ -48,16 +48,17 @@ const HostelGirls = () => {
             rating={hostel.Rating}
             phone={hostel.Phone}
             thumbnail={hostel.Thumbnail}
-            type={hostel.Type}
+            images={hostel.Images}
             latitude={hostel.Latitude}
             longitude={hostel.Longitude}
-            amentities={hostel.Amentities}
-            detailURL={`girls-hostels/${hostel.id}/`} // Add detail URL
+            type={hostel.Type}
+            amentities = {hostel.Amentities}
+
           />
         ))
       )}
     </>
-  );
+ );
 };
 
 export default HostelGirls;
