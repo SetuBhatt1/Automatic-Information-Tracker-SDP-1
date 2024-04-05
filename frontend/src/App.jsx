@@ -28,7 +28,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
+          
           <Route path="/customerSup" element={<CustomerSupport />} />
           <Route path="/businessSup" element={<BusinessSupport />} />
 
@@ -52,6 +52,7 @@ function App() {
           <Route path="/rating" element={<Rating />} />
           <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/details" element={<OnClick />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </Router>
     </>
