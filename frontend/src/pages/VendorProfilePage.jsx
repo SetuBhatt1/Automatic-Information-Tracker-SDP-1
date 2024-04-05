@@ -41,7 +41,7 @@ const VendorProfilePage = () => {
   // Fetch and set reviews similar to fetching vendor details
 
   if (!vendorDetails) {
-    return <div>Loading...</div>;
+    return <div>Your Service is registered successfully</div>;
   }
 
   // Function to handle edit button click
