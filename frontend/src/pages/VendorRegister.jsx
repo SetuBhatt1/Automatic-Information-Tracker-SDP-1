@@ -67,11 +67,13 @@ const VendorRegister = () => {
           <MDBCol>
             <MDBInput label="Name" value={name} onChange={(e) => setName(e.target.value)} />
           </MDBCol>
+          
           <MDBCol>
             <MDBInput label="Email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </MDBCol>
+         
         </MDBRow>
-        
+        <hr/>
         <MDBRow>
           <MDBCol>
             <MDBInput label="Phone Number" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
@@ -80,7 +82,7 @@ const VendorRegister = () => {
             <MDBInput label="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
           </MDBCol>
         </MDBRow>
-       
+        <hr/>
         <MDBRow>
           <MDBCol>
             <MDBRadio
@@ -119,7 +121,7 @@ const VendorRegister = () => {
             {selectedType === "T" && <TiffinVen onTiffinData={setTiffinData} />}
           </MDBCol>
         </MDBRow>
-    
+        <hr/>
         <MDBBtn rounded type="submit">Submit</MDBBtn>
       </form>
     </MDBContainer>

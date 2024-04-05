@@ -61,7 +61,7 @@ const TiffinVen = ({ onTiffinData }) => {
       <h5>Delivering Location</h5>
       <MDBInput
         type="text"
-        label="Delivering Location"
+        // label="Delivering Location"
         value={deliversToLoc}
         onChange={(e) => setDeliversToLoc(e.target.value)}
       />
@@ -69,7 +69,7 @@ const TiffinVen = ({ onTiffinData }) => {
       <h5>Opening Time</h5>
       <MDBInput
         type="time"
-        label="Opening Time"
+        // label="Opening Time"
         value={opensAt}
         onChange={(e) => setOpensAt(e.target.value)}
       />
@@ -77,7 +77,7 @@ const TiffinVen = ({ onTiffinData }) => {
       <h5>Closing Time</h5>
       <MDBInput
         type="time"
-        label="Closing Time"
+        // label="Closing Time"
         value={closesAt}
         onChange={(e) => setClosesAt(e.target.value)}
       />
