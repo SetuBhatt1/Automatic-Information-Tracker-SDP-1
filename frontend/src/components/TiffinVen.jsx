@@ -1,35 +1,31 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import {
-  MDBBtn,
-  MDBIcon,
-  MDBTooltip,
-  MDBRadio,
-  MDBInput,
-} from "mdb-react-ui-kit";
+import { MDBBtn, MDBIcon, MDBTooltip, MDBRadio, MDBInput } from "mdb-react-ui-kit";
 
 const TiffinVen = ({ onTiffinData }) => {
-  const [vegNonVeg, setVegNonVeg] = useState("V"); // Default to Veg
-  const [deliversToLoc, setDeliversToLoc] = useState("Delivering Location");
-  const [opensAt, setOpensAt] = useState("00:00:00");
-  const [closesAt, setClosesAt] = useState("00:00:00");
-  const [menuFile, setMenuFile] = useState(null);
-  const [menuPreview, setMenuPreview] = useState(null);
+ const [vegNonVeg, setVegNonVeg] = useState("V"); // Default to Veg
+ const [deliversToLoc, setDeliversToLoc] = useState("Delivering Location");
+ const [opensAt, setOpensAt] = useState("00:00:00");
+ const [closesAt, setClosesAt] = useState("00:00:00");
+ const [menuFile, setMenuFile] = useState(null);
+ const [menuPreview, setMenuPreview] = useState(null);
 
-  const handleMenuUpload = (e) => {
+ const handleMenuUpload = (e) => {
     const selectedFile = e.target.files[0];
     setMenuFile(selectedFile);
     setMenuPreview(URL.createObjectURL(selectedFile));
-  };
+ };
 
-  const handleDeleteMenu = () => {
+ const handleDeleteMenu = () => {
     setMenuFile(null);
     setMenuPreview(null);
-  };
+ };
 
-  const handleSubmit = () => {
+ const handleSubmit = () => {
     // Call the onTiffinData function with the tiffin-specific data
     onTiffinData({
+
+
       type_of_food: vegNonVeg,
       // menu: menuFile,
       delivers_to_loc: deliversToLoc,
@@ -38,9 +34,9 @@ const TiffinVen = ({ onTiffinData }) => {
       // longitude: 12.9716, // This should be dynamically set based on user input
       // latitude: 77.5946, // This should be dynamically set based on user input
     });
-  };
+ };
 
-  return (
+ return (
     <>
       {/* Form fields for name, email, address, longitude, latitude, and other required fields */}
       <hr />
@@ -92,11 +88,11 @@ const TiffinVen = ({ onTiffinData }) => {
         </MDBBtn>
       </div>
     </>
-  );
+ );
 };
 
 TiffinVen.propTypes = {
-  onTiffinData: PropTypes.func.isRequired,
+ onTiffinData: PropTypes.func.isRequired,
 };
 
 export default TiffinVen;
