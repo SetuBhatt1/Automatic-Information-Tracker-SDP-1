@@ -6,7 +6,7 @@ const UserComment = ({ hostel }) => {
  useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/service/search_reviews/?q=${hostel.name}`);
+        const response = await fetch(`https://automatic-info-tracker-backend.onrender.com/service/search_reviews/?q=${hostel.name}`);
         if (!response.ok) {
           throw new Error('Failed to fetch reviews');
         }
