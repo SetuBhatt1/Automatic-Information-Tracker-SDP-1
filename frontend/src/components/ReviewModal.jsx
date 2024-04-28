@@ -49,7 +49,7 @@ export default function ReviewModal({ isOpen, setOpen, hostel }) {
      formData.append('service_name', hostel.name);
  
      try {
-       const response = await fetch('http://127.0.0.1:8000/service/add_review/', {
+       const response = await fetch('https://automatic-info-tracker-backend.onrender.com/service/add_review/', {
          method: 'POST',
          body: formData,
        });
