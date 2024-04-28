@@ -15,7 +15,7 @@ const TiffinSer = () => {
   const [tiffins, setTiffins] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/data/tiffins/")
+    fetch("https://automatic-info-tracker-backend.onrender.com/data/tiffins/")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

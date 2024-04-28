@@ -16,7 +16,7 @@ const PgService = () => {
 
   useEffect(() => {
     console.log('Fetching data...'); // Log before the fetch request
-    fetch('http://127.0.0.1:8000/data/pgs/') 
+    fetch('https://automatic-info-tracker-backend.onrender.com/data/pgs/') 
        .then(response => {
          console.log('Response received:', response); // Log the response object
          if (!response.ok) {
