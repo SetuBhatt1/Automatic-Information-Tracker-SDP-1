@@ -147,10 +147,10 @@ const VendorRegister = () => {
             {selectedType === "T" && <TiffinVen onTiffinData={setTiffinData} />}
           </MDBCol>
         </MDBRow>
-        <hr />
-        <MDBBtn rounded type="submit">
+        {/* <hr /> */}
+        {/* <MDBBtn rounded type="submit">
           Submit
-        </MDBBtn>
+        </MDBBtn> */}
       </form>
     </MDBContainer>
   );

@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-// import PGBoys from "./pages/PGBoys";
-// import PGGirls from "./pages/PGGirls";
 import HostelBoys from "./pages/HostelBoys";
 import HostelGirls from "./pages/HostelGirls";
 import TiffinSer from "./pages/TiffinSer";
@@ -31,9 +29,6 @@ function App() {
           
           <Route path="/customerSup" element={<CustomerSupport />} />
           <Route path="/businessSup" element={<BusinessSupport />} />
-
-          {/* <Route path="/pgboys" element={<PGBoys />} />
-          <Route path="/pggirls" element={<PGGirls />} /> */}
 
           <Route path="/pgs" element={<PgService />} />
           <Route path="/hostelboys" element={<HostelBoys />} />
