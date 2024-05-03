@@ -11,6 +11,7 @@ import {
 import HostelVen from "../components/HostelVen";
 import HostelPGVen from "../components/HostelPGVen";
 import TiffinVen from "../components/TiffinVen";
+import PGVen from "../components/PGVen";
 
 const VendorRegister = () => {
   const [selectedType, setSelectedType] = useState("");
@@ -131,9 +132,10 @@ const VendorRegister = () => {
               onChange={(e) => setSelectedType(e.target.value)}
             />
             {selectedType === "Pg" && (
-              <HostelVen onHostelPGData={setHostelPGData} />
+              <PGVen onHostelData={setHostelData} /> // Pass the onHostelData function here
             )}
           </MDBCol>
+
           <MDBCol>
             <MDBRadio
               name="businessType"
