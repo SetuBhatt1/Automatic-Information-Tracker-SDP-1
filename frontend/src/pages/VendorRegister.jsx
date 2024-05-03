@@ -43,7 +43,7 @@ const VendorRegister = () => {
 
     try {
       const response = await fetch(
-        "http://automatic-info-tracker-backend.onrender.com/service/register/",
+        "https://automatic-info-tracker-backend.onrender.com/service/register/",
         {
           method: "POST",
           headers: {

@@ -21,7 +21,7 @@ const VendorProfilePage = () => {
     const fetchVendorDetails = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/service/business/${vendor_id}/`
+          `https://automatic-info-tracker-backend.onrender.com/service/business/${vendor_id}/`
         );
         if (response.ok) {
           const data = await response.json();
