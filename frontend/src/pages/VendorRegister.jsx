@@ -37,7 +37,7 @@ const VendorRegister = () => {
     if (selectedType === "H") {
       formData = { ...formData, ...hostelData };
     } else if (selectedType === "Pg") {
-      formData = { ...formData, ...hostelPGData };
+      formData = { ...formData, ...hostelData };
     } else if (selectedType === "T") {
       formData = { ...formData, ...tiffinData };
     }
