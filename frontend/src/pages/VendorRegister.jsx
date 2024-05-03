@@ -55,7 +55,9 @@ const VendorRegister = () => {
       );
 
       if (response.ok) {
-        navigate("/vendorprofile");
+        // navigate("/vendorprofile");
+        alert("Service Registered Successfully...")
+        navigate("/");
       } else {
         console.error("Error:", response.statusText);
       }
